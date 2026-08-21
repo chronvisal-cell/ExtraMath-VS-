@@ -700,7 +700,6 @@
         let currentUnlockingCourseId = null;
         let activeCourseId = null;
 
-        // Progress Persistence Functions
         function loadSavedProgress() {
             try {
                 const savedProfile = localStorage.getItem('visal_student_profile');
@@ -850,13 +849,25 @@
                         q: "១. ក្នុងស្វ័យគុណ $5^3$ តើតម្លៃ $5$ ហៅថាអ្វី?",
                         opts: ["សន្ទស្សន៍", "គោល", "ផលគុណ", "កត្តា"],
                         ans: 1,
-                        exp: "$5$ គឺជា <strong>គោល (Base)</strong> និង $3$ គឺជា <strong>សន្ទស្សន៍ (Exponent)</strong>។"
+                        exp: "$5$ គឺជា <strong>គោល (Base)</strong> និង $3$ គឺជា <strong>សន្ទស្សន៍ (Exponent)</strong>Position."
                     },
                     {
                         q: "២. គណនាតម្លៃនៃ $2^4$ ៖",
                         opts: ["$8$", "$16$", "$12$", "$64$"],
                         ans: 1,
                         exp: "$2^4 = 2 \\times 2 \\times 2 \\times 2 = 16$"
+                    },
+                    {
+                        q: "៣. គណនាតម្លៃនៃ $2^2$ ៖",
+                        opts: ["$8$", "$16$", "$12$", "$4$"],
+                        ans: 3,
+                        exp: "$2^2 = 2 \\times 2 = 4$"
+                    },
+                    {
+                        q: "៤. គណនាតម្លៃនៃ $3^4$ ៖",
+                        opts: ["$9$", "$27$", "$18$", "$81$"],
+                        ans: 3,
+                        exp: "$3^4 = 3 \\times 3 \\times 3 \\times 3 = 81$"
                     }
                 ]
             },
@@ -1309,7 +1320,6 @@
             }
         }
 
-        // Profile & Modals
         function openProfileModal() { document.getElementById('profile-modal').classList.remove('hidden'); }
         function closeProfileModal() { document.getElementById('profile-modal').classList.add('hidden'); }
         function openQrModal() { document.getElementById('qr-modal').classList.remove('hidden'); }
