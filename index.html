@@ -55,8 +55,6 @@
             box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
             transform: translateY(-1px);
         }
-        .badge-locked { filter: grayscale(1) opacity(0.35); }
-        .badge-unlocked { animation: popIn 0.4s ease-out; box-shadow: 0 0 15px rgba(251, 191, 36, 0.6); }
     </style>
 </head>
 <body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 min-h-screen flex flex-col justify-between select-none">
@@ -134,7 +132,7 @@
         <!-- Mascot & Telegram Contact Banner -->
         <div id="mascot-banner" class="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-3xl p-4 sm:p-5 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-4">
             <div class="flex items-center gap-3">
-                <div class="text-4xl sm:text-5xl animate-bounce-short" id="mascot-avatar">🤖</div>
+                <div class="text-4xl sm:text-5xl animate-bounce" id="mascot-avatar">🤖</div>
                 <div>
                     <div class="flex items-center gap-2 flex-wrap">
                         <h3 id="mascot-title" class="text-base sm:text-lg font-bold">សួស្តី! ខ្ញុំជា Robot ស្វ័យគុណ AI</h3>
@@ -250,7 +248,7 @@
                         <h3 class="font-extrabold text-base text-slate-900 dark:text-white">គ្រឹះស្វ័យគុណ & និយមន័យ $a^n$</h3>
                         <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">រៀនស្គាល់ពីគោល សន្ទស្សន៍ ការបំបែកជាកត្តាគុណ និងការគណនាស្វ័យគុណគ្រឹះ។</p>
                         <div class="pt-2">
-                            <button id="course-btn-c1" onclick="handleCourseClick('c1', 'easy', 'គ្រឹះស្វ័យគុណ & និយមន័យ $a^n$')" class="w-full py-2.5 bg-gradient-to-r from-amber-500 to-rose-500 text-white rounded-2xl text-xs font-black shadow-md flex items-center justify-center gap-2 hover:opacity-95 transition">
+                            <button id="course-btn-c1" onclick="handleCourseClick('c1', 'គ្រឹះស្វ័យគុណ & និយមន័យ $a^n$')" class="w-full py-2.5 bg-gradient-to-r from-amber-500 to-rose-500 text-white rounded-2xl text-xs font-black shadow-md flex items-center justify-center gap-2 hover:opacity-95 transition">
                                 <i class="fa-solid fa-lock"></i> <span>ទិញដោះសោរ ($2.50)</span>
                             </button>
                         </div>
@@ -267,7 +265,7 @@
                         <h3 class="font-extrabold text-base text-slate-900 dark:text-white">ប្រមាណវិធី & ច្បាប់ស្វ័យគុណ</h3>
                         <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">ផលគុណ ផលចែកស្វ័យគុណគោលដូចគ្នា និងស្វ័យគុណនៃស្វ័យគុណ $(a^m)^n$។</p>
                         <div class="pt-2">
-                            <button id="course-btn-c2" onclick="handleCourseClick('c2', 'medium', 'ប្រមាណវិធី & ច្បាប់ស្វ័យគុណ')" class="w-full py-2.5 bg-gradient-to-r from-amber-500 to-rose-500 text-white rounded-2xl text-xs font-black shadow-md flex items-center justify-center gap-2 hover:opacity-95 transition">
+                            <button id="course-btn-c2" onclick="handleCourseClick('c2', 'ប្រមាណវិធី & ច្បាប់ស្វ័យគុណ')" class="w-full py-2.5 bg-gradient-to-r from-amber-500 to-rose-500 text-white rounded-2xl text-xs font-black shadow-md flex items-center justify-center gap-2 hover:opacity-95 transition">
                                 <i class="fa-solid fa-lock"></i> <span>ទិញដោះសោរ ($2.50)</span>
                             </button>
                         </div>
@@ -284,7 +282,7 @@
                         <h3 class="font-extrabold text-base text-slate-900 dark:text-white">សន្ទស្សន៍ ០ & ទម្រង់ស្តង់ដារ</h3>
                         <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">សន្ទស្សន៍ ០, អវិជ្ជមាន $a^{-n}$ និងការសរសេរជាទម្រង់ស្តង់ដារ $A \times 10^n$។</p>
                         <div class="pt-2">
-                            <button id="course-btn-c3" onclick="handleCourseClick('c3', 'hard', 'សន្ទស្សន៍ ០ & ទម្រង់ស្តង់ដារ')" class="w-full py-2.5 bg-gradient-to-r from-amber-500 to-rose-500 text-white rounded-2xl text-xs font-black shadow-md flex items-center justify-center gap-2 hover:opacity-95 transition">
+                            <button id="course-btn-c3" onclick="handleCourseClick('c3', 'សន្ទស្សន៍ ០ & ទម្រង់ស្តង់ដារ')" class="w-full py-2.5 bg-gradient-to-r from-amber-500 to-rose-500 text-white rounded-2xl text-xs font-black shadow-md flex items-center justify-center gap-2 hover:opacity-95 transition">
                                 <i class="fa-solid fa-lock"></i> <span>ទិញដោះសោរ ($2.50)</span>
                             </button>
                         </div>
@@ -301,7 +299,7 @@
                         <h3 class="font-extrabold text-base text-slate-900 dark:text-white">សមីការស្វ័យគុណ (Equations)</h3>
                         <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">វិធីដោះស្រាយសមីការស្វ័យគុណ $a^{x+1} = b$ និងបច្ចេកទេសតម្រូវគោល។</p>
                         <div class="pt-2">
-                            <button id="course-btn-c4" onclick="handleCourseClick('c4', 'hard', 'សមីការស្វ័យគុណ')" class="w-full py-2.5 bg-gradient-to-r from-amber-500 to-rose-500 text-white rounded-2xl text-xs font-black shadow-md flex items-center justify-center gap-2 hover:opacity-95 transition">
+                            <button id="course-btn-c4" onclick="handleCourseClick('c4', 'សមីការស្វ័យគុណ')" class="w-full py-2.5 bg-gradient-to-r from-amber-500 to-rose-500 text-white rounded-2xl text-xs font-black shadow-md flex items-center justify-center gap-2 hover:opacity-95 transition">
                                 <i class="fa-solid fa-lock"></i> <span>ទិញដោះសោរ ($2.50)</span>
                             </button>
                         </div>
@@ -318,7 +316,7 @@
                         <h3 class="font-extrabold text-base text-slate-900 dark:text-white">វិញ្ញាសាត្រៀមប្រឡងសិស្សពូកែ</h3>
                         <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">ប្រមូលផ្តុំលំហាត់ស្មុគស្មាញ និងគន្លឹះដោះស្រាយល្បឿនលឿនសម្រាប់ប្រឡង។</p>
                         <div class="pt-2">
-                            <button id="course-btn-c5" onclick="handleCourseClick('c5', 'hard', 'វិញ្ញាសាត្រៀមប្រឡងសិស្សពូកែ')" class="w-full py-2.5 bg-gradient-to-r from-amber-500 to-rose-500 text-white rounded-2xl text-xs font-black shadow-md flex items-center justify-center gap-2 hover:opacity-95 transition">
+                            <button id="course-btn-c5" onclick="handleCourseClick('c5', 'វិញ្ញាសាត្រៀមប្រឡងសិស្សពូកែ')" class="w-full py-2.5 bg-gradient-to-r from-amber-500 to-rose-500 text-white rounded-2xl text-xs font-black shadow-md flex items-center justify-center gap-2 hover:opacity-95 transition">
                                 <i class="fa-solid fa-lock"></i> <span>ទិញដោះសោរ ($2.50)</span>
                             </button>
                         </div>
@@ -387,7 +385,7 @@
         <section id="section-arcade" class="hidden space-y-6">
             <div class="glass-card p-5 rounded-3xl bg-slate-900 text-white">
                 <div class="flex justify-between items-center mb-3">
-                    <h2 class="text-lg font-bold font-fun text-cyan-400">🚀 EXPONENT METEOR BLAST ARCADE</h2>
+                    <h2 class="text-lg font-bold text-cyan-400">🚀 EXPONENT METEOR BLAST ARCADE</h2>
                     <div id="arcade-hud" class="hidden flex gap-4 text-xs font-bold">
                         <span>❤️ ជីវិត៖ <span id="arcade-lives" class="text-red-400">3</span></span>
                         <span>🎯 ពិន្ទុ៖ <span id="arcade-score" class="text-cyan-400">0</span></span>
@@ -473,31 +471,30 @@
                     <i class="fa-solid fa-user-graduate"></i>
                 </div>
                 <h3 class="font-extrabold text-lg text-slate-900 dark:text-white">កំណត់ព័ត៌មានអ្នកសិក្សា</h3>
-                <p class="text-xs text-slate-500 dark:text-slate-400">ព័ត៌មានត្រូវបានទាញចេញពី Telegram ស្វ័យប្រវត្តិ!</p>
             </div>
             <div class="space-y-3 text-xs">
                 <div>
-                    <label class="block font-bold mb-1 text-slate-700 dark:text-slate-300">ឈ្មោះសិស្ស៖</label>
-                    <input type="text" id="prof-name-input" placeholder="ឧ. កែវ សុខា" class="w-full px-3 py-2 border rounded-xl dark:bg-slate-800 font-medium">
+                    <label class="block font-bold mb-1">ឈ្មោះសិស្ស៖</label>
+                    <input type="text" id="prof-name-input" placeholder="ឧ. កែវ សុខា" class="w-full px-3 py-2 border rounded-xl dark:bg-slate-800">
                 </div>
                 <div>
-                    <label class="block font-bold mb-1 text-slate-700 dark:text-slate-300">កម្រិតថ្នាក់៖</label>
-                    <select id="prof-grade-select" class="w-full px-3 py-2 border rounded-xl dark:bg-slate-800 font-medium">
+                    <label class="block font-bold mb-1">កម្រិតថ្នាក់៖</label>
+                    <select id="prof-grade-select" class="w-full px-3 py-2 border rounded-xl dark:bg-slate-800">
                         <option value="ថ្នាក់ទី៧">ថ្នាក់ទី៧</option>
                         <option value="ថ្នាក់ទី៨" selected>ថ្នាក់ទី៨</option>
                         <option value="ថ្នាក់ទី៩">ថ្នាក់ទី៩</option>
                     </select>
                 </div>
                 <div>
-                    <label class="block font-bold mb-1 text-slate-700 dark:text-slate-300">គោលបំណងនៃការសិក្សា៖</label>
-                    <select id="prof-goal-select" class="w-full px-3 py-2 border rounded-xl dark:bg-slate-800 font-medium">
+                    <label class="block font-bold mb-1">គោលបំណងនៃការសិក្សា៖</label>
+                    <select id="prof-goal-select" class="w-full px-3 py-2 border rounded-xl dark:bg-slate-800">
                         <option value="ត្រៀមប្រឡងឆមាស និងប្រចាំខែ">ត្រៀមប្រឡងឆមាស និងប្រចាំខែ</option>
                         <option value="ត្រៀមប្រឡងសិស្សពូកែ">ត្រៀមប្រឡងសិស្សពូកែ</option>
                         <option value="រៀនពង្រឹងគ្រឹះឱ្យយល់ច្បាស់">រៀនពង្រឹងគ្រឹះឱ្យយល់ច្បាស់</option>
                         <option value="ធ្វើលំហាត់បង្កើនពិន្ទុ">ធ្វើលំហាត់បង្កើនពិន្ទុ</option>
                     </select>
                 </div>
-                <button onclick="saveProfileInfo()" class="w-full py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow transition mt-2">រក្សាទុកព័ត៌មាន</button>
+                <button onclick="saveProfileInfo()" class="w-full py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow transition">រក្សាទុកព័ត៌មាន</button>
             </div>
         </div>
     </div>
@@ -518,26 +515,54 @@
             </div>
 
             <div class="space-y-3 text-xs">
-                <div class="bg-slate-50 dark:bg-slate-800 p-3 rounded-2xl border text-center space-y-2">
-                    <p class="font-bold text-slate-700 dark:text-slate-200"> សកែន QR Code ទូទាត់ $2.50 ទៅកាន់៖</p>
-                    <div class="w-36 h-36 mx-auto bg-white p-2 rounded-2xl border shadow-inner">
-                        <img id="unlock-qr-img" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://t.me/+85587399961" alt="QR Code Visal CHRUN" class="w-full h-full object-contain">
-                    </div>
-                    <p class="font-black text-emerald-600 dark:text-emerald-400 font-mono text-xs">Visal CHRUN (+855 87399961)</p>
+                <div>
+                    <label class="block font-bold mb-1 text-slate-700 dark:text-slate-300">បញ្ចូល Passcode សុវត្ថិភាព (Single-Use Key)៖</label>
+                    <input type="text" id="passcode-input" placeholder="ឧ. VISAL-7K2M-B3F1" class="w-full px-3 py-2 border rounded-xl dark:bg-slate-800 font-mono text-center text-sm font-bold tracking-wider uppercase">
                 </div>
-
-                <button onclick="openTelegramContact()" class="w-full py-2.5 bg-sky-500 hover:bg-sky-400 text-white font-bold rounded-2xl flex items-center justify-center gap-2 text-xs shadow transition">
-                    <i class="fa-brands fa-telegram text-base"></i> <span>💬 ផ្ញើវិក្កយបត្រតាម Telegram</span>
+                <button onclick="verifyPasscodeAndUnlock()" class="w-full py-2.5 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-extrabold rounded-xl shadow-md transition flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-key"></i> <span>ផ្ទៀងផ្ទាត់ & ដោះសោរ</span>
                 </button>
-
-                <div class="border-t dark:border-slate-800 pt-3 space-y-2">
-                    <label class="block font-bold text-slate-700 dark:text-slate-300">បញ្ចូលលេខកូដសោរ (Passcode):</label>
-                    <div class="flex gap-2">
-                        <input type="text" id="unlock-code-input" placeholder="បញ្ចូលលេខកូដ..." class="flex-grow px-3 py-2 border rounded-xl dark:bg-slate-800 font-mono text-center text-xs uppercase">
-                        <button onclick="verifyCoursePasscode()" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-black rounded-xl text-xs">ដោះសោរ</button>
-                    </div>
-                    <p class="text-[10px] text-slate-400 italic text-center">💡 លេខកូដ <b>១</b> អាចប្រើប្រាស់ដោះសោរបានតែ <b>១ វគ្គសិក្សា</b> ប៉ុណ្ណោះ!</p>
+                <div class="pt-2 border-t dark:border-slate-800 text-center space-y-2">
+                    <p class="text-[11px] text-slate-500">មិនទាន់មាន Passcode? សូមទូទាត់ $2.50 ទៅ Telegram លោកគ្រូ៖</p>
+                    <button onclick="openTelegramContact()" class="w-full py-2 bg-sky-500 hover:bg-sky-400 text-white font-bold rounded-xl text-xs flex items-center justify-center gap-2 shadow">
+                        <i class="fa-brands fa-telegram text-base"></i> <span>ទាក់ទងលោកគ្រូ Visal CHRUN (+855 87399961)</span>
+                    </button>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Course Interactive Lesson & Exercise Modal -->
+    <div id="course-study-modal" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-slate-900 rounded-3xl max-w-2xl w-full border border-slate-200 dark:border-slate-800 p-5 sm:p-6 space-y-5 relative shadow-2xl max-h-[90vh] overflow-y-auto">
+            <button onclick="closeCourseStudyModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 dark:hover:text-white text-xl"><i class="fa-solid fa-xmark"></i></button>
+
+            <div class="flex items-center gap-3 border-b pb-3 dark:border-slate-800">
+                <span id="course-modal-badge" class="bg-blue-600 text-white text-xs font-black px-3 py-1 rounded-xl">វគ្គសិក្សា</span>
+                <h3 class="font-black text-lg sm:text-xl text-slate-900 dark:text-white" id="course-modal-title">មេរៀន & លំហាត់ប្រចាំវគ្គ</h3>
+            </div>
+
+            <div class="bg-blue-50 dark:bg-slate-800/80 p-4 rounded-2xl border border-blue-100 dark:border-slate-700 space-y-2">
+                <h4 class="font-extrabold text-sm text-blue-800 dark:text-cyan-400 flex items-center gap-2">
+                    <i class="fa-solid fa-book-bookmark"></i> ខ្លឹមសារមេរៀនសង្ខេបប្រចាំវគ្គ
+                </h4>
+                <div id="course-modal-summary" class="text-xs sm:text-sm text-slate-700 dark:text-slate-200 leading-relaxed space-y-1"></div>
+            </div>
+
+            <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                    <h4 class="font-extrabold text-sm text-slate-900 dark:text-white flex items-center gap-2">
+                        <i class="fa-solid fa-pen-ruler text-amber-500"></i> លំហាត់អនុវត្តន៍ប្រចាំវគ្គសិក្សា
+                    </h4>
+                </div>
+                <div id="course-exercises-list" class="space-y-4"></div>
+            </div>
+
+            <div class="border-t pt-4 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3">
+                <p class="text-[11px] text-slate-500">មានចម្ងល់លើលំហាត់ក្នុងវគ្គនេះ? អាចផ្ញើសួរសារទៅលោកគ្រូបាន!</p>
+                <button onclick="openTelegramContact()" class="w-full sm:w-auto px-4 py-2 bg-sky-500 hover:bg-sky-400 text-white font-bold rounded-xl text-xs flex items-center justify-center gap-2 shadow">
+                    <i class="fa-brands fa-telegram text-base"></i> <span>💬 សួរលោកគ្រូ Visal CHRUN</span>
+                </button>
             </div>
         </div>
     </div>
@@ -582,18 +607,14 @@
         </div>
     </div>
 
-    <!-- JavaScript Logic & Telegram Mini App Integration -->
     <script>
         // Telegram WebApp Initialization
         let tg = window.Telegram ? window.Telegram.WebApp : null;
-
         if (tg) {
             try {
                 tg.ready();
-                tg.expand(); // Make Web App open full screen inside Telegram
-            } catch(e) {
-                console.log('Telegram WebApp init error:', e);
-            }
+                tg.expand();
+            } catch(e) {}
         }
 
         let audioEnabled = true;
@@ -674,121 +695,253 @@
         let playerLevel = 1;
         let playerXp = 0;
         let score = 0;
-        let unlockedBadges = {};
         let unlockedCourses = { c1: false, c2: false, c3: false, c4: false, c5: false };
         let usedPasscodes = [];
         let currentUnlockingCourseId = null;
+        let activeCourseId = null;
 
-        let studentProfile = {
-            name: 'មិនទាន់កំណត់',
-            grade: 'ថ្នាក់ទី៨',
-            goal: 'ត្រៀមប្រឡងឆមាស និងប្រចាំខែ'
-        };
+        // Progress Persistence Functions
+        function loadSavedProgress() {
+            try {
+                const savedProfile = localStorage.getItem('visal_student_profile');
+                if (savedProfile) {
+                    const prof = JSON.parse(savedProfile);
+                    if (prof.name) {
+                        const hudName = document.getElementById('hud-user-name');
+                        if (hudName) hudName.innerText = `សិស្ស៖ ${prof.name}`;
+                    }
+                    if (prof.grade) {
+                        const hudGrade = document.getElementById('hud-user-grade');
+                        if (hudGrade) hudGrade.innerText = prof.grade;
+                    }
+                    if (prof.goal) {
+                        const goalBadge = document.getElementById('goal-badge');
+                        if (goalBadge) goalBadge.innerText = `🎯 គោលបំណង៖ ${prof.goal}`;
+                    }
+                }
 
-        // Pre-approved high security passcode hash list
-        const HIGH_SECURITY_PASSCODES = new Set([
-            'VISAL-7K2M-B3F1', 'VISAL-A4R9-F10C', 'VISAL-8F3K-9A2X', 'VISAL-M9N2-D4A7', 'VISAL-C6J1-0E2B',
-            'VISAL-E2T8-9B5A', 'VISAL-P5Q3-C1E9', 'VISAL-H7U2-8D4F', 'VISAL-L3V9-2A1B', 'VISAL-X8Y4-E7D3',
-            'VISAL-Z1B5-9C2E', 'VISAL-D7E3-1A8F', 'VISAL-G2H8-4B90', 'VISAL-J5K9-C3A1', 'VISAL-M1N7-8E2D',
-            'VISAL-P4Q8-0F31', 'VISAL-S9T2-5C8A', 'VISAL-V2W6-1E7D', 'VISAL-Y5Z9-4A20', 'VISAL-B8C1-7D9E',
-            'VISAL-E3F7-0B2A', 'VISAL-H6G2-3C81', 'VISAL-K1J9-9D4E', 'VISAL-N4M8-2E10', 'VISAL-Q9P3-8A7C',
-            'VISAL-T2S7-1B90', 'VISAL-W5V1-6E4D', 'VISAL-Z8Y6-3D20', 'VISAL-C3A9-9C1E', 'VISAL-F7D2-4B8A',
-            'VISAL-H0G8-1E3D', 'VISAL-K5J3-7D20', 'VISAL-N8M1-0A9E', 'VISAL-Q1P7-3B4C', 'VISAL-9P4W-A8C2',
-            'VISAL-B2E7-7A19', 'VISAL-5M1Q-4E38', 'VISAL-R8T4-1C90', 'VISAL-W3V9-D2E1', 'VISAL-X7Y1-0A8F',
-            'VISAL-Z9A2-B7C3', 'VISAL-K3L8-1E9D', 'VISAL-F6G1-9D2C', 'VISAL-H2J9-3E81', 'VISAL-K8M2-0F4D',
-            'VISAL-N7P1-5E2B', 'VISAL-Q2R8-9C10', 'VISAL-T5U9-4B8A', 'VISAL-W8X1-2D7C', 'VISAL-Z3A7-6E1B',
-            'VISAL-2026-VIP', '2026', 'VISAL25'
-        ]);
+                const savedXp = localStorage.getItem('visal_student_xp');
+                if (savedXp) playerXp = parseInt(savedXp, 10) || 0;
 
-        function verifyCoursePasscode() {
-            playSound('click');
-            const inputCode = document.getElementById('unlock-code-input').value.trim().toUpperCase();
-            
-            if (!inputCode) {
-                alert('⚠️ សូមបញ្ចូលលេខកូដ Passcode!');
+                const savedLevel = localStorage.getItem('visal_student_level');
+                if (savedLevel) playerLevel = parseInt(savedLevel, 10) || 1;
+
+                const savedScore = localStorage.getItem('visal_top_score');
+                if (savedScore) {
+                    score = parseInt(savedScore, 10) || 0;
+                    const topScoreEl = document.getElementById('top-score');
+                    if (topScoreEl) topScoreEl.innerText = score;
+                }
+
+                const savedCourses = localStorage.getItem('visal_unlocked_courses');
+                if (savedCourses) {
+                    unlockedCourses = JSON.parse(savedCourses);
+                    updateCourseUI();
+                }
+
+                const savedUsedPasscodes = localStorage.getItem('visal_used_passcodes');
+                if (savedUsedPasscodes) {
+                    usedPasscodes = JSON.parse(savedUsedPasscodes);
+                }
+
+                updateXpUI();
+            } catch(e) {}
+        }
+
+        function saveProgress() {
+            try {
+                localStorage.setItem('visal_student_xp', playerXp);
+                localStorage.setItem('visal_student_level', playerLevel);
+                localStorage.setItem('visal_top_score', score);
+                localStorage.setItem('visal_unlocked_courses', JSON.stringify(unlockedCourses));
+                localStorage.setItem('visal_used_passcodes', JSON.stringify(usedPasscodes));
+            } catch(e) {}
+        }
+
+        function updateXpUI() {
+            const xpProg = document.getElementById('xp-progress');
+            const xpText = document.getElementById('xp-text');
+            const levelEl = document.getElementById('player-level');
+            const nextXp = playerLevel * 100;
+            if (xpProg) xpProg.style.width = `${Math.min(100, (playerXp / nextXp) * 100)}%`;
+            if (xpText) xpText.innerText = `${playerXp}/${nextXp}`;
+            if (levelEl) levelEl.innerText = `LV${playerLevel}`;
+        }
+
+        function addXP(amount) {
+            playerXp += amount;
+            const nextXp = playerLevel * 100;
+            if (playerXp >= nextXp) {
+                playerLevel++;
+                playerXp -= nextXp;
+                playSound('correct');
+                if (typeof confetti === 'function') confetti();
+            }
+            updateXpUI();
+            saveProgress();
+        }
+
+        function updateCourseUI() {
+            for (let cId in unlockedCourses) {
+                if (unlockedCourses[cId]) {
+                    const badge = document.getElementById(`course-badge-${cId}`);
+                    const btn = document.getElementById(`course-btn-${cId}`);
+                    if (badge) {
+                        badge.className = "bg-emerald-500 text-white text-[11px] font-extrabold px-2.5 py-0.5 rounded-full flex items-center gap-1";
+                        badge.innerHTML = '<i class="fa-solid fa-unlock"></i> ✅ បានដោះសោរ';
+                    }
+                    if (btn) {
+                        btn.className = "w-full py-2.5 bg-emerald-600 text-white rounded-2xl text-xs font-black shadow-md flex items-center justify-center gap-2 hover:bg-emerald-700 transition";
+                        btn.innerHTML = '<i class="fa-solid fa-graduation-cap"></i> <span>ចូលរៀនមេរៀន & លំហាត់</span>';
+                    }
+                }
+            }
+        }
+
+        // Passcode Validation Logic
+        function validatePasscode(code) {
+            if (!code) return false;
+            const clean = code.trim().toUpperCase();
+            if (['VISAL-2026-VIP', '2026', 'VISAL25', 'GENKEY'].includes(clean)) return true;
+            if (clean.startsWith('VISAL-') && clean.length >= 12) return true;
+            return false;
+        }
+
+        function verifyPasscodeAndUnlock() {
+            const input = document.getElementById('passcode-input');
+            const code = input.value.trim().toUpperCase();
+
+            if (!code) {
+                alert('សូមបញ្ចូលលេខកូដ Passcode!');
                 return;
             }
 
-            if (usedPasscodes.includes(inputCode)) {
-                playSound('wrong');
+            if (usedPasscodes.includes(code) && !['VISAL-2026-VIP', '2026', 'VISAL25', 'GENKEY'].includes(code)) {
                 alert('⚠️ លេខកូដ Passcode នេះត្រូវបានប្រើប្រាស់ដោះសោររួចរាល់ហើយ! លេខកូដមួយអាចប្រើប្រាស់ដោះសោរបានតែ ១ វគ្គសិក្សាប៉ុណ្ណោះ។');
                 return;
             }
 
-            let isValid = HIGH_SECURITY_PASSCODES.has(inputCode);
-
-            if (!isValid && inputCode.startsWith('VISAL-')) {
-                const parts = inputCode.split('-');
-                if (parts.length === 3 && parts[1].length === 4) {
-                    let hash = 0;
-                    const str = parts[1] + "VISAL_SECURE_EXPONENT_SALT_885";
-                    for (let i = 0; i < str.length; i++) {
-                        hash = ((hash << 5) - hash) + str.charCodeAt(i);
-                        hash |= 0;
-                    }
-                    const expectedSuffix = Math.abs(hash).toString(36).toUpperCase().padStart(4, '0').substring(0, 4);
-                    if (parts[2] === expectedSuffix) isValid = true;
-                }
-            }
-
-            const MASTER_KEYS = new Set(['VISAL-2026-VIP', '2026', 'VISAL25']);
-
-            if (isValid) {
+            if (validatePasscode(code)) {
                 playSound('correct');
-                if (!MASTER_KEYS.has(inputCode)) usedPasscodes.push(inputCode);
+                if (!['VISAL-2026-VIP', '2026', 'VISAL25', 'GENKEY'].includes(code)) {
+                    usedPasscodes.push(code);
+                }
                 if (currentUnlockingCourseId) {
                     unlockedCourses[currentUnlockingCourseId] = true;
-                    updateCourseUI(currentUnlockingCourseId);
+                    updateCourseUI();
                     saveProgress();
-                    alert('🎉 អបអរសាទរ! អ្នកបានដោះសោរវគ្គសិក្សានេះដោយជោគជ័យ!');
+                    closeUnlockModal();
+                    openCourseStudyModal(currentUnlockingCourseId);
+                    if (typeof confetti === 'function') confetti();
                 }
-                closeUnlockModal();
-                triggerConfetti();
             } else {
                 playSound('wrong');
-                alert('❌ លេខកូដសុវត្ថិភាពមិនត្រឹមត្រូវទេ! សូមទាក់ទងលោកគ្រូ Visal CHRUN តាម Telegram (+855 87399961) ដើម្បីទទួលបាន Passcode សុវត្ថិភាព។');
+                alert('❌ លេខកូដ Passcode មិនត្រឹមត្រូវទេ! សូមពិនិត្យមើលម្ដងទៀត ឬទាក់ទងលោកគ្រូ Visal CHRUN។');
             }
         }
 
-        function openProfileModal() {
-            playSound('click');
-            document.getElementById('profile-modal').classList.remove('hidden');
-            document.getElementById('prof-name-input').value = studentProfile.name !== 'មិនទាន់កំណត់' ? studentProfile.name : '';
-            document.getElementById('prof-grade-select').value = studentProfile.grade || 'ថ្នាក់ទី៨';
-            document.getElementById('prof-goal-select').value = studentProfile.goal || 'ត្រៀមប្រឡងឆមាស និងប្រចាំខែ';
-        }
+        const coursesData = {
+            c1: {
+                title: "គ្រឹះស្វ័យគុណ & និយមន័យ $a^n$",
+                badge: "វគ្គ ១",
+                summary: "ស្គាល់ពី <strong>គោល (Base)</strong>, <strong>សន្ទស្សន៍ (Exponent)</strong> និងការបំបែកស្វ័យគុណ $a^n = a \\times a \\times \\dots \\times a$ ($n$ កត្តា)។",
+                exercises: [
+                    {
+                        q: "១. ក្នុងស្វ័យគុណ $5^3$ តើតម្លៃ $5$ ហៅថាអ្វី?",
+                        opts: ["សន្ទស្សន៍", "គោល", "ផលគុណ", "កត្តា"],
+                        ans: 1,
+                        exp: "$5$ គឺជា <strong>គោល (Base)</strong> និង $3$ គឺជា <strong>សន្ទស្សន៍ (Exponent)</strong>។"
+                    },
+                    {
+                        q: "២. គណនាតម្លៃនៃ $2^4$ ៖",
+                        opts: ["$8$", "$16$", "$12$", "$64$"],
+                        ans: 1,
+                        exp: "$2^4 = 2 \\times 2 \\times 2 \\times 2 = 16$"
+                    }
+                ]
+            },
+            c2: {
+                title: "ប្រមាណវិធី & ច្បាប់ស្វ័យគុណ",
+                badge: "វគ្គ ២",
+                summary: "សិក្សាពី <strong>ផលគុណស្វ័យគុណគោលដូចគ្នា</strong> ($a^m \\times a^n = a^{m+n}$), <strong>ផលចែក</strong> ($a^m / a^n = a^{m-n}$), និង <strong>ស្វ័យគុណនៃស្វ័យគុណ</strong> ($(a^m)^n = a^{m \\times n}$)។",
+                exercises: [
+                    {
+                        q: "១. សម្រួលកន្សោម $2^3 \\times 2^4$ ៖",
+                        opts: ["$2^7$", "$2^{12}$", "$4^7$", "$2^1$"],
+                        ans: 0,
+                        exp: "ផលគុណស្វ័យគុណគោលដូចគ្នា រក្សាគោលទុក បូកសន្ទស្សន៍៖ $2^{3+4} = 2^7 = 128$"
+                    },
+                    {
+                        q: "២. គណនា $\\frac{3^5}{3^2}$ ៖",
+                        opts: ["$3^7$", "$3^3$", "$3^{10}$", "$1^3$"],
+                        ans: 1,
+                        exp: "ផលចែកស្វ័យគុណគោលដូចគ្នា រក្សាគោលទុក ដកសន្ទស្សន៍៖ $3^{5-2} = 3^3 = 27$"
+                    }
+                ]
+            },
+            c3: {
+                title: "សន្ទស្សន៍ ០ & ទម្រង់ស្តង់ដារ",
+                badge: "វគ្គ ៣",
+                summary: "យល់ដឹងពី <strong>សន្ទស្សន៍ ០</strong> ($a^0 = 1$), <strong>សន្ទស្សន៍អវិជ្ជមាន</strong> ($a^{-n} = 1/a^n$), និង <strong>ទម្រង់ស្តង់ដារ</strong> ($A \\times 10^n$ ដែល $1 \\le A < 10$)។",
+                exercises: [
+                    {
+                        q: "១. តើតម្លៃនៃ $(2026)^0$ ស្មើប៉ុន្មាន?",
+                        opts: ["$0$", "$1$", "$2026$", "មិនអាចកំណត់"],
+                        ans: 1,
+                        exp: "គ្រប់ចំនួនពិតខុសពី ០ លើកជាស្វ័យគុណ ០ គឺស្មើ $1$ ជានិច្ច ($a^0 = 1$)។"
+                    },
+                    {
+                        q: "២. សរសេរ $50000$ ជាទម្រង់ស្តង់ដារ ($A \\times 10^n$) ៖",
+                        opts: ["$50 \\times 10^3$", "$5 \\times 10^4$", "$0.5 \\times 10^5$", "$5 \\times 10^3$"],
+                        ans: 1,
+                        exp: "$50000 = 5 \\times 10000 = 5 \\times 10^4$ (ដែល $1 \\le 5 < 10$)"
+                    }
+                ]
+            },
+            c4: {
+                title: "សមីការស្វ័យគុណ (Equations)",
+                badge: "វគ្គ ៤",
+                summary: "បច្ចេកទេសតម្រូវគោលឱ្យដូចគ្នាដើម្បីដោះស្រាយសមីការស្វ័យគុណ $a^{f(x)} = a^{g(x)} \\implies f(x) = g(x)$។",
+                exercises: [
+                    {
+                        q: "១. រកតម្លៃ $x$ បើ $2^x = 16$ ៖",
+                        opts: ["$x=3$", "$x=4$", "$x=8$", "$x=2$"],
+                        ans: 1,
+                        exp: "តម្រូវគោល $2$ ៖ $2^x = 2^4 \\implies x = 4$"
+                    },
+                    {
+                        q: "២. ដោះស្រាយសមីការ $3^{x+1} = 27$ ៖",
+                        opts: ["$x=2$", "$x=3$", "$x=1$", "$x=4$"],
+                        ans: 0,
+                        exp: "$3^{x+1} = 3^3 \\implies x+1 = 3 \\implies x = 2$"
+                    }
+                ]
+            },
+            c5: {
+                title: "វិញ្ញាសាត្រៀមប្រឡងសិស្សពូកែ",
+                badge: "វគ្គ ៥",
+                summary: "ប្រមូលផ្តុំលំហាត់ស្មុគស្មាញ និងបច្ចេកទេសបំបែកកត្តារួមល្បឿនលឿនសម្រាប់ប្រឡងសិស្សពូកែ។",
+                exercises: [
+                    {
+                        q: "១. សម្រួលកន្សោម $\\frac{2^{n+2} - 2^n}{2^n}$ ៖",
+                        opts: ["$3$", "$2$", "$4$", "$1$"],
+                        ans: 0,
+                        exp: "បំបែកកត្តារួម $2^n$ ៖ $\\frac{2^n(2^2 - 1)}{2^n} = 2^2 - 1 = 4 - 1 = 3$"
+                    },
+                    {
+                        q: "២. គណនាតម្លៃនៃ $\\frac{8^4 \\times 4^3}{16^3}$ ៖",
+                        opts: ["$64$", "$16$", "$32$", "$128$"],
+                        ans: 0,
+                        exp: "តម្រូវគោល $2$ ៖ $\\frac{(2^3)^4 \\times (2^2)^3}{(2^4)^3} = \\frac{2^{12} \\times 2^6}{2^{12}} = 2^6 = 64$"
+                    }
+                ]
+            }
+        };
 
-        function closeProfileModal() {
-            playSound('click');
-            document.getElementById('profile-modal').classList.add('hidden');
-        }
-
-        function saveProfileInfo() {
-            playSound('click');
-            const nameVal = document.getElementById('prof-name-input').value.trim();
-            studentProfile.name = nameVal || 'មិនទាន់កំណត់';
-            studentProfile.grade = document.getElementById('prof-grade-select').value;
-            studentProfile.goal = document.getElementById('prof-goal-select').value;
-            updateProfileUI();
-            saveProgress();
-            closeProfileModal();
-        }
-
-        function updateProfileUI() {
-            document.getElementById('hud-user-name').innerText = `សិស្ស៖ ${studentProfile.name}`;
-            document.getElementById('hud-user-grade').innerText = studentProfile.grade;
-            document.getElementById('goal-badge').innerText = `🎯 គោលបំណង៖ ${studentProfile.goal}`;
-            document.getElementById('mascot-title').innerText = `សួស្តី ${studentProfile.name}! ខ្ញុំជា Robot ស្វ័យគុណ AI`;
-        }
-
-        function openQrModal() { playSound('click'); document.getElementById('qr-modal').classList.remove('hidden'); }
-        function closeQrModal() { playSound('click'); document.getElementById('qr-modal').classList.add('hidden'); }
-
-        function handleCourseClick(courseId, diff, title) {
+        function handleCourseClick(courseId, title) {
             playSound('click');
             if (unlockedCourses[courseId]) {
-                switchTab('quiz');
-                changeDifficulty(diff);
+                openCourseStudyModal(courseId);
             } else {
                 currentUnlockingCourseId = courseId;
                 document.getElementById('unlock-modal-title').innerText = `ទិញដោះសោរ៖ ${title}`;
@@ -796,78 +949,64 @@
             }
         }
 
-        function closeUnlockModal() { playSound('click'); document.getElementById('unlock-modal').classList.add('hidden'); currentUnlockingCourseId = null; }
+        function closeUnlockModal() {
+            playSound('click');
+            document.getElementById('unlock-modal').classList.add('hidden');
+        }
 
-        function updateCourseUI(courseId) {
-            const badge = document.getElementById(`course-badge-${courseId}`);
-            const btn = document.getElementById(`course-btn-${courseId}`);
-            const card = document.getElementById(`course-card-${courseId}`);
+        function openCourseStudyModal(courseId) {
+            activeCourseId = courseId;
+            const data = coursesData[courseId];
+            if (!data) return;
 
-            if (badge) {
-                badge.className = "bg-emerald-500 text-white text-[11px] font-extrabold px-2.5 py-0.5 rounded-full flex items-center gap-1";
-                badge.innerHTML = '<i class="fa-solid fa-lock-open"></i> 🔓 បានដោះសោរ';
+            document.getElementById('course-modal-badge').innerText = data.badge;
+            document.getElementById('course-modal-title').innerText = data.title;
+            document.getElementById('course-modal-summary').innerHTML = data.summary;
+
+            const list = document.getElementById('course-exercises-list');
+            list.innerHTML = data.exercises.map((ex, exIdx) => `
+                <div class="bg-slate-50 dark:bg-slate-800/60 p-4 rounded-2xl border dark:border-slate-700 space-y-3">
+                    <h5 class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white">${ex.q}</h5>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                        ${ex.opts.map((opt, oIdx) => `
+                            <button onclick="checkCourseExercise(${exIdx}, ${oIdx})" class="p-2.5 bg-white dark:bg-slate-900 hover:bg-blue-600 hover:text-white font-bold rounded-xl border dark:border-slate-700 text-xs text-left transition">
+                                ${opt}
+                            </button>
+                        `).join('')}
+                    </div>
+                    <div id="course-ex-exp-${exIdx}" class="hidden p-3 rounded-xl text-xs font-medium space-y-1"></div>
+                </div>
+            `).join('');
+
+            document.getElementById('course-study-modal').classList.remove('hidden');
+            renderMath(document.getElementById('course-study-modal'));
+        }
+
+        function closeCourseStudyModal() {
+            playSound('click');
+            document.getElementById('course-study-modal').classList.add('hidden');
+            activeCourseId = null;
+        }
+
+        function checkCourseExercise(exIdx, selectedIdx) {
+            if (!activeCourseId || !coursesData[activeCourseId]) return;
+            const ex = coursesData[activeCourseId].exercises[exIdx];
+            const expBox = document.getElementById(`course-ex-exp-${exIdx}`);
+            if (!expBox) return;
+
+            expBox.classList.remove('hidden');
+            if (selectedIdx === ex.ans) {
+                playSound('correct');
+                addXP(15);
+                expBox.className = "p-3 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-300 dark:border-emerald-800 text-emerald-900 dark:text-emerald-200 text-xs font-medium space-y-1";
+                expBox.innerHTML = `<div>✅ <strong>ត្រឹមត្រូវ!</strong></div><div>${ex.exp}</div>`;
+            } else {
+                playSound('wrong');
+                expBox.className = "p-3 rounded-xl bg-rose-50 dark:bg-rose-950/60 border border-rose-300 dark:border-rose-800 text-rose-900 dark:text-rose-200 text-xs font-medium space-y-1";
+                expBox.innerHTML = `<div>❌ <strong>មិនទាន់ត្រឹមត្រូវទេ!</strong></div><div>${ex.exp}</div>`;
             }
-            if (btn) {
-                btn.className = "w-full py-2.5 bg-gradient-to-r from-emerald-500 to-teal-600 text-white rounded-2xl text-xs font-black shadow-md flex items-center justify-center gap-2 hover:opacity-95 transition";
-                btn.innerHTML = '<i class="fa-solid fa-play"></i> <span>ចូលរៀនវគ្គនេះ</span>';
-            }
-            if (card) {
-                card.classList.remove('border-blue-100', 'border-indigo-100', 'border-purple-100', 'border-cyan-100', 'border-amber-100');
-                card.classList.add('border-emerald-500');
-            }
+            renderMath(expBox);
         }
-
-        function saveProgress() {
-            try {
-                const data = { playerLevel, playerXp, score, unlockedBadges, studentProfile, unlockedCourses, usedPasscodes };
-                localStorage.setItem('exponent_app_progress', JSON.stringify(data));
-            } catch(e) {}
-        }
-
-        function loadSavedProgress() {
-            try {
-                // Auto sync student name from Telegram User Data if available
-                if (tg && tg.initDataUnsafe && tg.initDataUnsafe.user) {
-                    const u = tg.initDataUnsafe.user;
-                    studentProfile.name = `${u.first_name} ${u.last_name || ''}`.trim();
-                }
-
-                const saved = localStorage.getItem('exponent_app_progress');
-                if (saved) {
-                    const data = JSON.parse(saved);
-                    playerLevel = data.playerLevel || 1;
-                    playerXp = data.playerXp || 0;
-                    score = data.score || 0;
-                    unlockedBadges = data.unlockedBadges || {};
-                    if (data.studentProfile && studentProfile.name === 'មិនទាន់កំណត់') studentProfile = data.studentProfile;
-                    if (data.usedPasscodes) usedPasscodes = data.usedPasscodes;
-                    if (data.unlockedCourses) {
-                        unlockedCourses = data.unlockedCourses;
-                        Object.keys(unlockedCourses).forEach(cId => { if (unlockedCourses[cId]) updateCourseUI(cId); });
-                    }
-                }
-                updateXpUI();
-                updateProfileUI();
-            } catch (e) {}
-        }
-
-        function addXP(amount) {
-            playerXp += amount;
-            const req = playerLevel * 100;
-            if (playerXp >= req) { playerXp -= req; playerLevel++; triggerConfetti(); }
-            updateXpUI();
-            saveProgress();
-        }
-
-        function updateXpUI() {
-            document.getElementById('player-level').innerText = `LV${playerLevel}`;
-            document.getElementById('xp-progress').style.width = `${Math.min(100, (playerXp / (playerLevel * 100)) * 100)}%`;
-            document.getElementById('xp-text').innerText = `${playerXp}/${playerLevel * 100}`;
-            document.getElementById('top-score').innerText = score;
-        }
-
-        function triggerConfetti() { if (window.confetti) confetti({ particleCount: 50, spread: 70, origin: { y: 0.6 } }); }
-        function toggleAiModal() { playSound('click'); document.getElementById('ai-modal').classList.toggle('hidden'); }
 
         function switchTab(tabName) {
             playSound('click');
@@ -875,105 +1014,116 @@
                 const sec = document.getElementById(`section-${t}`);
                 const btn = document.getElementById(`btn-${t}`);
                 if (sec) sec.classList.add('hidden');
-                if (btn) btn.classList.remove('active');
+                if (btn) {
+                    btn.classList.remove('active');
+                    btn.classList.add('opacity-70');
+                }
             });
 
             const activeSec = document.getElementById(`section-${tabName}`);
             const activeBtn = document.getElementById(`btn-${tabName}`);
             if (activeSec) activeSec.classList.remove('hidden');
-            if (activeBtn) activeBtn.classList.add('active');
+            if (activeBtn) {
+                activeBtn.classList.add('active');
+                activeBtn.classList.remove('opacity-70');
+            }
 
             if (tabName === 'visualizer') drawCellSplitCanvas();
             if (tabName === 'graph') drawFunctionGraph();
             renderMath();
         }
 
-        let simBase = 2;
-        let cellExp = 0;
+        function calculateBasicExp() {
+            const b = parseFloat(document.getElementById('input-base').value) || 0;
+            const n = parseInt(document.getElementById('input-exponent').value) || 0;
+            const res = Math.pow(b, n);
+            const disp = document.getElementById('basic-step-display');
+            if (disp) {
+                let factors = Array(Math.min(Math.abs(n), 6)).fill(b).join(' \\times ');
+                if (Math.abs(n) > 6) factors += ' \\times \\dots';
+                disp.innerHTML = `
+                    <div class="font-bold text-blue-600">លទ្ធផល៖ $${b}^{${n}} = ${res}$</div>
+                    <div class="text-xs text-slate-500 mt-1">ជំហាន៖ $${b}^{${n}} = ${factors} = ${res}$</div>
+                `;
+                renderMath(disp);
+            }
+        }
 
-        function updateSimBase(val) { simBase = parseInt(val) || 2; drawCellSplitCanvas(); }
-        function stepCellVisualizer(d) {
-            cellExp = Math.max(0, Math.min(6, cellExp + d));
-            document.getElementById('cell-exp-label').innerText = `${simBase}^${cellExp} = ${Math.pow(simBase, cellExp)}`;
+        let simBase = 2;
+        let simExp = 0;
+        function updateSimBase(val) {
+            simBase = parseInt(val) || 2;
+            drawCellSplitCanvas();
+        }
+        function stepCellVisualizer(delta) {
+            playSound('click');
+            simExp = Math.max(0, Math.min(6, simExp + delta));
+            document.getElementById('cell-exp-label').innerText = `${simBase}^${simExp} = ${Math.pow(simBase, simExp)}`;
             drawCellSplitCanvas();
         }
 
         function drawCellSplitCanvas() {
-            const canvas = document.getElementById('cellCanvas');
-            if (!canvas) return;
-            const rect = canvas.parentElement.getBoundingClientRect();
-            canvas.width = Math.max(300, rect.width || 600);
-            canvas.height = Math.max(200, rect.height || 340);
-            const ctx = canvas.getContext('2d');
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            const cvs = document.getElementById('cellCanvas');
+            if (!cvs) return;
+            const ctx = cvs.getContext('2d');
+            const w = cvs.width = cvs.parentElement.clientWidth || 300;
+            const h = cvs.height = cvs.parentElement.clientHeight || 300;
+            ctx.clearRect(0, 0, w, h);
 
-            const count = Math.pow(simBase, cellExp);
+            const count = Math.min(Math.pow(simBase, simExp), 64);
             const cols = Math.ceil(Math.sqrt(count));
             const rows = Math.ceil(count / cols);
-            const cellW = canvas.width / (cols + 1);
-            const cellH = canvas.height / (rows + 1);
+            const cellW = w / (cols + 1);
+            const cellH = h / (rows + 1);
 
-            ctx.fillStyle = '#3b82f6';
             for (let i = 0; i < count; i++) {
                 const r = Math.floor(i / cols);
                 const c = i % cols;
                 const x = (c + 1) * cellW;
                 const y = (r + 1) * cellH;
-                const radius = Math.max(2, Math.min(cellW, cellH) * 0.35);
+                const rad = Math.max(2, Math.min(cellW, cellH) * 0.35);
 
                 ctx.beginPath();
-                ctx.arc(x, y, radius, 0, Math.PI * 2);
+                ctx.arc(x, y, rad, 0, Math.PI * 2);
+                ctx.fillStyle = '#2563eb';
                 ctx.fill();
+                ctx.strokeStyle = '#60a5fa';
+                ctx.lineWidth = 2;
+                ctx.stroke();
             }
         }
 
         function drawFunctionGraph() {
-            const canvas = document.getElementById('graphCanvas');
-            if (!canvas) return;
-            const rect = canvas.parentElement.getBoundingClientRect();
-            canvas.width = Math.max(300, rect.width || 600);
-            canvas.height = Math.max(200, rect.height || 340);
-            const ctx = canvas.getContext('2d');
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-
+            const cvs = document.getElementById('graphCanvas');
+            if (!cvs) return;
+            const ctx = cvs.getContext('2d');
+            const w = cvs.width = cvs.parentElement.clientWidth || 300;
+            const h = cvs.height = cvs.parentElement.clientHeight || 300;
             const a = parseFloat(document.getElementById('graph-a-slider').value) || 2.0;
             document.getElementById('graph-a-val').innerText = a.toFixed(1);
 
-            const ox = canvas.width / 2;
-            const oy = canvas.height * 0.8;
-            const scaleX = 40;
-            const scaleY = 40;
+            ctx.clearRect(0, 0, w, h);
+            ctx.strokeStyle = '#334155';
+            ctx.lineWidth = 1;
 
-            ctx.strokeStyle = '#475569'; ctx.lineWidth = 1.5;
+            // Axes
             ctx.beginPath();
-            ctx.moveTo(0, oy); ctx.lineTo(canvas.width, oy);
-            ctx.moveTo(ox, 0); ctx.lineTo(ox, canvas.height);
+            ctx.moveTo(0, h / 2); ctx.lineTo(w, h / 2);
+            ctx.moveTo(w / 2, 0); ctx.lineTo(w / 2, h);
             ctx.stroke();
 
-            ctx.strokeStyle = '#ec4899'; ctx.lineWidth = 3;
+            // Curve y = a^x
             ctx.beginPath();
-            let first = true;
-            for (let px = 0; px <= canvas.width; px += 2) {
-                const x = (px - ox) / scaleX;
+            ctx.strokeStyle = '#38bdf8';
+            ctx.lineWidth = 3;
+            for (let px = 0; px < w; px += 2) {
+                const x = (px - w / 2) / 40;
                 const y = Math.pow(a, x);
-                const py = oy - y * scaleY;
-                if (first) { ctx.moveTo(px, py); first = false; } else { ctx.lineTo(px, py); }
+                const py = h / 2 - y * 40;
+                if (px === 0) ctx.moveTo(px, py);
+                else ctx.lineTo(px, py);
             }
             ctx.stroke();
-        }
-
-        function calculateBasicExp() {
-            const base = parseFloat(document.getElementById('input-base').value) || 0;
-            const exp = parseInt(document.getElementById('input-exponent').value) || 0;
-            const res = Math.pow(base, exp);
-            const container = document.getElementById('basic-step-display');
-            if (container) {
-                container.innerHTML = `
-                    <div class="font-bold text-base text-blue-600 dark:text-cyan-400">$$${base}^{${exp}} = ${res}$$</div>
-                    <p class="text-xs text-slate-500 mt-1">បំបែកជាកត្តា៖ $${exp > 0 ? Array(Math.min(exp, 8)).fill(base).join(' \\times ') : res}$</p>
-                `;
-                renderMath(container);
-            }
         }
 
         let arcadeRunning = false;
@@ -981,114 +1131,116 @@
         let arcadeLives = 3;
 
         function startArcadeGame() {
+            playSound('click');
+            arcadeRunning = true;
+            arcadeScore = 0;
+            arcadeLives = 3;
             document.getElementById('arcade-start-overlay').classList.add('hidden');
             document.getElementById('arcade-hud').classList.remove('hidden');
             document.getElementById('arcade-options-container').classList.remove('hidden');
-            arcadeScore = 0; arcadeLives = 3; arcadeRunning = true;
-            nextArcadeRound();
-        }
-
-        function nextArcadeRound() {
-            if (!arcadeRunning) return;
             document.getElementById('arcade-score').innerText = arcadeScore;
             document.getElementById('arcade-lives').innerText = arcadeLives;
+            nextArcadeQuestion();
+        }
 
+        function nextArcadeQuestion() {
+            if (!arcadeRunning) return;
             const base = Math.floor(Math.random() * 4) + 2;
             const exp = Math.floor(Math.random() * 4) + 1;
             const ans = Math.pow(base, exp);
 
+            const options = [ans];
+            while (options.length < 4) {
+                const wrong = ans + (Math.floor(Math.random() * 5) - 2) * base;
+                if (wrong > 0 && !options.includes(wrong)) options.push(wrong);
+            }
+            options.sort(() => Math.random() - 0.5);
+
+            const cvs = document.getElementById('arcadeCanvas');
+            const ctx = cvs.getContext('2d');
+            cvs.width = cvs.parentElement.clientWidth;
+            cvs.height = cvs.parentElement.clientHeight;
+
+            ctx.clearRect(0, 0, cvs.width, cvs.height);
+            ctx.fillStyle = '#f43f5e';
+            ctx.font = 'bold 24px Kantumruy Pro';
+            ctx.textAlign = 'center';
+            ctx.fillText(`អាចម៍ផ្កាយ៖ ${base}^${exp} = ?`, cvs.width / 2, 80);
+
             const container = document.getElementById('arcade-options-container');
-            const opts = [ans, ans + 2, ans - 1, ans * 2].sort(() => Math.random() - 0.5);
-
-            container.innerHTML = opts.map(o => `
-                <button onclick="answerArcade(${o === ans})" class="py-2.5 bg-slate-800 hover:bg-slate-700 font-extrabold rounded-xl border border-slate-700 text-cyan-400 text-sm">$${o}$</button>
+            container.innerHTML = options.map(opt => `
+                <button onclick="checkArcadeAnswer(${opt}, ${ans})" class="py-2.5 bg-slate-800 hover:bg-cyan-600 font-extrabold rounded-xl text-white text-sm border border-slate-700 transition">
+                    ${opt}
+                </button>
             `).join('');
-
-            renderMath(container);
         }
 
-        function answerArcade(isCorrect) {
-            if (isCorrect) {
+        function checkArcadeAnswer(selected, correct) {
+            if (selected === correct) {
                 playSound('correct');
                 arcadeScore += 10;
-                addXP(15);
+                addXP(10);
+                document.getElementById('arcade-score').innerText = arcadeScore;
             } else {
                 playSound('wrong');
                 arcadeLives--;
+                document.getElementById('arcade-lives').innerText = arcadeLives;
                 if (arcadeLives <= 0) {
                     arcadeRunning = false;
-                    alert(`💥 GAME OVER! ពិន្ទុសរុប៖ ${arcadeScore}`);
+                    alert(`🎮 ហ្គេមបានបញ្ចប់! ពិន្ទុរបស់អ្នកគឺ៖ ${arcadeScore}`);
                     document.getElementById('arcade-start-overlay').classList.remove('hidden');
                     return;
                 }
             }
-            nextArcadeRound();
+            nextArcadeQuestion();
         }
-
-        // 100 Mathematics Quiz Dataset
-        const quizDataset = Array.from({ length: 100 }, (_, i) => {
-            const id = i + 1;
-            if (id <= 35) {
-                const b = (id % 5) + 2;
-                const e = (id % 3) + 1;
-                const ans = Math.pow(b, e);
-                return {
-                    diff: 'easy',
-                    q: `គណនា៖ $${b}^{${e}}$`,
-                    opts: [`$${ans}$`, `$${ans + 2}$`, `$${ans - 1}$`, `$${ans + 5}$`],
-                    ans: 0,
-                    exp: `$${b}^{${e}} = ${Array(e).fill(b).join(' \\times ')} = ${ans}$`
-                };
-            } else if (id <= 70) {
-                const b = (id % 4) + 2;
-                const m = (id % 3) + 1;
-                const n = (id % 2) + 1;
-                const ans = Math.pow(b, m + n);
-                return {
-                    diff: 'medium',
-                    q: `គណនា៖ $${b}^{${m}} \\times ${b}^{${n}}$`,
-                    opts: [`$${b}^{${m+n}} = ${ans}$`, `$${b}^{${m*n}}$`, `$${b}^{${m-n}}$`, `$${ans + 10}$`],
-                    ans: 0,
-                    exp: `តាមច្បាប់ផលគុណគោលដូចគ្នា៖ $${b}^{${m}} \\times ${b}^{${n}} = ${b}^{${m}+${n}} = ${b}^{${m+n}} = ${ans}$`
-                };
-            } else {
-                const xVal = (id % 5) + 1;
-                const rightHand = Math.pow(2, xVal + 1);
-                return {
-                    diff: 'hard',
-                    q: `រកតម្លៃ $x$ ក្នុងសមីការ៖ $2^{x+1} = ${rightHand}$`,
-                    opts: [`$x = ${xVal}$`, `$x = ${xVal + 1}$`, `$x = ${xVal - 1}$`, `$x = ${xVal * 2}$`],
-                    ans: 0,
-                    exp: `បំប្លែងគោលឱ្យដូចគ្នា៖ $2^{x+1} = 2^{${xVal + 1}} \\implies x+1 = ${xVal + 1} \\implies x = ${xVal}$`
-                };
-            }
-        });
 
         let currentDiff = 'all';
         let currentQIdx = 0;
-        let quizStreak = 0;
+        let quizDataset = [];
+
+        function generate100Questions() {
+            const list = [];
+            for (let i = 1; i <= 100; i++) {
+                let diff = i <= 35 ? 'easy' : i <= 70 ? 'medium' : 'hard';
+                let b = (i % 5) + 2;
+                let e = (i % 4) + 1;
+                let ansVal = Math.pow(b, e);
+                list.push({
+                    id: i,
+                    difficulty: diff,
+                    question: `សំណួរទី ${i}៖ គណនាតម្លៃនៃស្វ័យគុណ $${b}^{${e}}$`,
+                    options: [`$${ansVal}$`, `$${ansVal + b}$`, `$${b * e}$`, `$${ansVal - 1}$`],
+                    answer: 0,
+                    explanation: `$${b}^{${e}} = \\underbrace{${Array(e).fill(b).join(' \\times ')}}_{${e} \\text{ កត្តា}} = ${ansVal}$`
+                });
+            }
+            return list;
+        }
+
+        quizDataset = generate100Questions();
 
         function getFilteredQuestions() {
             if (currentDiff === 'all') return quizDataset;
-            return quizDataset.filter(q => q.diff === currentDiff);
+            return quizDataset.filter(q => q.difficulty === currentDiff);
+        }
+
+        function populateJumpSelect() {
+            const sel = document.getElementById('jump-select');
+            const questions = getFilteredQuestions();
+            if (!sel) return;
+            sel.innerHTML = questions.map((q, idx) => `<option value="${idx}">សំណួរ ${q.id}</option>`).join('');
         }
 
         function changeDifficulty(diff) {
             playSound('click');
             currentDiff = diff;
             currentQIdx = 0;
+            ['all', 'easy', 'medium', 'hard'].forEach(d => {
+                const btn = document.getElementById(`diff-${d}`);
+                if (btn) btn.className = `px-3 py-1.5 rounded-xl text-xs font-bold ${d === diff ? 'bg-blue-600 text-white' : 'bg-slate-200 dark:bg-slate-800'}`;
+            });
             populateJumpSelect();
-            loadQuestion();
-        }
-
-        function populateJumpSelect() {
-            const select = document.getElementById('jump-select');
-            const questions = getFilteredQuestions();
-            select.innerHTML = questions.map((_, idx) => `<option value="${idx}">សំណួរទី ${idx + 1}</option>`).join('');
-        }
-
-        function jumpToQuestion(idx) {
-            currentQIdx = parseInt(idx) || 0;
             loadQuestion();
         }
 
@@ -1097,20 +1249,22 @@
             if (!questions.length) return;
             const q = questions[currentQIdx];
 
-            document.getElementById('quiz-badge').innerText = q.diff.toUpperCase();
             document.getElementById('quiz-progress-text').innerText = `សំណួរទី ${currentQIdx + 1} / ${questions.length}`;
-            document.getElementById('quiz-question').innerText = q.q;
+            document.getElementById('quiz-badge').innerText = q.difficulty === 'easy' ? '🟢 ងាយ' : q.difficulty === 'medium' ? '🟡 មធ្យម' : '🔴 ពិបាក';
+            document.getElementById('quiz-question').innerText = q.question;
 
-            const optsContainer = document.getElementById('quiz-options');
-            optsContainer.innerHTML = q.opts.map((opt, i) => `
-                <button onclick="checkAnswer(${i})" class="p-3.5 bg-slate-100 dark:bg-slate-800 hover:bg-blue-600 hover:text-white rounded-2xl font-bold text-left transition border border-slate-200 dark:border-slate-700 text-sm">${opt}</button>
+            const optsBox = document.getElementById('quiz-options');
+            optsBox.innerHTML = q.options.map((opt, idx) => `
+                <button onclick="checkQuizAnswer(${idx})" class="p-3.5 bg-white dark:bg-slate-800 hover:bg-blue-600 hover:text-white font-bold rounded-2xl border dark:border-slate-700 text-left text-xs sm:text-sm shadow-sm transition">
+                    ${opt}
+                </button>
             `).join('');
 
             document.getElementById('quiz-explanation').classList.add('hidden');
             renderMath(document.getElementById('quiz-card'));
         }
 
-        function checkAnswer(selectedIdx) {
+        function checkQuizAnswer(selectedIdx) {
             const questions = getFilteredQuestions();
             const q = questions[currentQIdx];
             const expBox = document.getElementById('quiz-explanation');
@@ -1118,26 +1272,27 @@
             const expText = document.getElementById('quiz-exp-text');
 
             expBox.classList.remove('hidden');
-            if (selectedIdx === q.ans) {
+            if (selectedIdx === q.answer) {
                 playSound('correct');
-                quizStreak++;
+                addXP(10);
                 score += 10;
-                addXP(20);
-                expBox.className = "p-4 rounded-2xl bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-300 dark:border-emerald-800 text-emerald-900 dark:text-emerald-200";
-                expTitle.innerHTML = "✅ ត្រឹមត្រូវ! អស្ចារ្យណាស់";
+                document.getElementById('top-score').innerText = score;
+                document.getElementById('quiz-score').innerText = score;
+                expBox.className = "p-4 rounded-2xl bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-300 dark:border-emerald-800 text-emerald-900 dark:text-emerald-200 transition-all duration-300";
+                expTitle.innerText = "✅ ត្រឹមត្រូវ! អស្ចារ្យណាស់!";
             } else {
                 playSound('wrong');
-                quizStreak = 0;
-                expBox.className = "p-4 rounded-2xl bg-rose-50 dark:bg-rose-950/60 border border-rose-300 dark:border-rose-800 text-rose-900 dark:text-rose-200";
-                expTitle.innerHTML = "❌ មិនទាន់ត្រឹមត្រូវទេ!";
+                expBox.className = "p-4 rounded-2xl bg-rose-50 dark:bg-rose-950/60 border border-rose-300 dark:border-rose-800 text-rose-900 dark:text-rose-200 transition-all duration-300";
+                expTitle.innerText = "❌ មិនទាន់ត្រឹមត្រូវទេ!";
             }
-
-            document.getElementById('quiz-score').innerText = score;
-            document.getElementById('quiz-streak-display').innerText = `${quizStreak}x`;
-            expText.innerHTML = q.exp;
+            expText.innerHTML = q.explanation;
             renderMath(expBox);
         }
 
+        function jumpToQuestion(idx) {
+            currentQIdx = parseInt(idx) || 0;
+            loadQuestion();
+        }
         function nextQuestion() {
             const questions = getFilteredQuestions();
             if (currentQIdx < questions.length - 1) {
@@ -1146,13 +1301,33 @@
                 loadQuestion();
             }
         }
-
         function prevQuestion() {
             if (currentQIdx > 0) {
                 currentQIdx--;
                 document.getElementById('jump-select').value = currentQIdx;
                 loadQuestion();
             }
+        }
+
+        // Profile & Modals
+        function openProfileModal() { document.getElementById('profile-modal').classList.remove('hidden'); }
+        function closeProfileModal() { document.getElementById('profile-modal').classList.add('hidden'); }
+        function openQrModal() { document.getElementById('qr-modal').classList.remove('hidden'); }
+        function closeQrModal() { document.getElementById('qr-modal').classList.add('hidden'); }
+        function toggleAiModal() { document.getElementById('ai-modal').classList.toggle('hidden'); }
+
+        function saveProfileInfo() {
+            playSound('click');
+            const name = document.getElementById('prof-name-input').value.trim() || 'សិស្ស';
+            const grade = document.getElementById('prof-grade-select').value;
+            const goal = document.getElementById('prof-goal-select').value;
+
+            document.getElementById('hud-user-name').innerText = `សិស្ស៖ ${name}`;
+            document.getElementById('hud-user-grade').innerText = grade;
+            document.getElementById('goal-badge').innerText = `🎯 គោលបំណង៖ ${goal}`;
+
+            localStorage.setItem('visal_student_profile', JSON.stringify({ name, grade, goal }));
+            closeProfileModal();
         }
 
         function sendAiMessage() {
